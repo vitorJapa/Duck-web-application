@@ -1,7 +1,7 @@
 {
-  "name": "node-express-firebase-crud",
-  "version": "1.0.0",
-  "description": "",
+  "name": "duck_app",
+  "version": "1.0.1",
+  "description": "App created to FreshWorks Studio assignment",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,8 +11,8 @@
     "node": "12.16.1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Vitor Kihara",
+  "license": "UNLICENSED",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -22,5 +22,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorJapa/Duck-web-application-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vitorJapa/Duck-web-application-/issues"
+  },
+  "homepage": "https://github.com/vitorJapa/Duck-web-application-#readme"
 }

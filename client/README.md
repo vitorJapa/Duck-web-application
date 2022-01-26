@@ -1,6 +1,6 @@
 # client
 
-> vue js project
+> Vue.js project frontend
 
 ## Build Setup
 
