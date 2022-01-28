@@ -3,7 +3,7 @@
     <v-flex xs6 offset-xs3>
       <div class="white elevation-2">
         <v-toolbar flat dense class="blue" dark>
-          <v-toolbar-title>Reports</v-toolbar-title>
+          <v-toolbar-title>Ducks Reports</v-toolbar-title>
         </v-toolbar>
 
         <div>
