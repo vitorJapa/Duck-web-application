@@ -5,34 +5,29 @@
         <v-toolbar flat dense class="blue" dark>
           <v-toolbar-title>Ducks Reports</v-toolbar-title>
         </v-toolbar>
-
-        <div>
-          <v-simple-table dense>
-            <template v-slot:default>
-             <thead>
+        <v-simple-table>
+          <template v-slot:default>
+            <thead>
               <tr>
-                <td>Owner Name</td>
-                <td>Time ducks Eat</td>
-                <td>What food</td>
-                <td>Place</td>
-                <td>How many ducks?</td>
-                <td>How much food?</td>
+                <th class="text-left">
+                  Created By
+                </th>
+                <th class="text-left">
+                  Created Date
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in list" :key="item.id">
+              <tr
+                v-for="item in list"
+                :key="item.id">
                 <td>{{item.report_owner_name}}</td>
-                <td>{{item.ducks_time}}</td>
-                <td>{{item.ducks_food}}</td>
-                <td>{{item.ducks_where}}</td>
-                <td>{{item.ducks_how_many}}</td>
-                <td>{{item.ducks_how_much_food}}</td>
+                <td>{{item.created_timestamp}}</td>
               </tr>
             </tbody>
-            </template>
-          </v-simple-table>
+          </template>
+        </v-simple-table>
         </div>
-      </div>
     </v-flex>
   </v-layout>
 </template>

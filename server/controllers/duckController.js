@@ -45,7 +45,7 @@ const getAllReport = async (req, res, next) => {
                     doc.data().ducks_where,
                     doc.data().ducks_how_many,
                     doc.data().ducks_how_much_food,
-                    doc.data().created_timestamp
+                    doc.data().created_timestamp = new Date(doc.data().created_timestamp)
                 );
                 allItemArray.push(ducks);
             });
@@ -65,7 +65,18 @@ const getReport = async (req, res, next) => {
         if(!data.exists) {
             res.status(404).send({'Error': 'Report with the given ID not found'});
         }else {
-            res.send(data.data());
+            const data_date = new Date(data.data().created_timestamp)
+            const duck = {
+                "id": data.id,
+                "report_owner_name": data.data().report_owner_name,
+                "ducks_time": data.data().ducks_time,
+                "ducks_food": data.data().ducks_food,
+                "ducks_where": data.data().ducks_where,
+                "ducks_how_many": data.data().ducks_how_many,
+                "ducks_how_much_food": data.data().ducks_how_much_food,
+                "created_timestamp": data_date 
+            }
+            res.send(duck);
         }
     } catch (error) {
         res.status(400).send(error.message);
