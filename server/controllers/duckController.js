@@ -49,7 +49,6 @@ const getAllReport = async (req, res, next) => {
                 );
                 allItemArray.push(ducks);
             });
-            console.log("chamada ok")
             res.send(allItemArray);
         }
     } catch (error) {

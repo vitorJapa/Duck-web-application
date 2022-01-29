@@ -23,6 +23,9 @@
                 :key="item.id">
                 <td>{{item.report_owner_name}}</td>
                 <td>{{item.created_timestamp}}</td>
+                <v-btn dark class="cyan" @click="navigateTo({name: 'report', params:{id: item.id}})">
+                  View
+                </v-btn>
               </tr>
             </tbody>
           </template>
@@ -47,6 +50,11 @@ export default {
       this.list = resp.data
       console.warn(resp.data.data)
     })
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
   }
 }
 
