@@ -10,13 +10,16 @@ const { validationResult } = require('express-validator/check');
 
 const addReport = async (req, res, next) => {
     try {
+        const d = new Date();
         const errors = validationResult(req); 
         if (!errors.isEmpty()) {
             res.status(422).json({ errors: errors.array() });
             return;
       }
         const req_data = req.body;
-        await firestore.collection('Ducks').doc().set(req_data)
+        const data_teste = {'created_timestamp': d.getTime()};
+        const merge = {...req.body, ...data_teste}
+        await firestore.collection('Ducks').doc().set(merge)
         res.status(200).send({"MSG": 'Report Created'});
     } catch (error) {
         res.status(400).send(error.message);
@@ -41,7 +44,8 @@ const getAllReport = async (req, res, next) => {
                     doc.data().ducks_food,
                     doc.data().ducks_where,
                     doc.data().ducks_how_many,
-                    doc.data().ducks_how_much_food
+                    doc.data().ducks_how_much_food,
+                    doc.data().created_timestamp
                 );
                 allItemArray.push(ducks);
             });

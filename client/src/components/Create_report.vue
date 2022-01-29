@@ -94,8 +94,8 @@ export default {
     reset () {
       this.$refs.form.reset()
     },
-    newReport () {
-      axios.post('http://localhost:5000/api/duck', {
+    async newReport () {
+      await axios.post('http://localhost:5000/api/duck', {
         report_owner_name: this.name,
         ducks_time: this.ducks_time,
         ducks_food: this.ducks_food,

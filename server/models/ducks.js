@@ -1,5 +1,5 @@
 class Ducks {
-    constructor(id ,report_owner_name ,ducks_time, ducks_food, ducks_where, ducks_how_many, ducks_how_much_food) {
+    constructor(id ,report_owner_name ,ducks_time, ducks_food, ducks_where, ducks_how_many, ducks_how_much_food, created_timestamp) {
         this.id = id;
         this.report_owner_name = report_owner_name;
         this.ducks_time = ducks_time;
@@ -7,6 +7,7 @@ class Ducks {
         this.ducks_where = ducks_where;
         this.ducks_how_many = ducks_how_many;
         this.ducks_how_much_food = ducks_how_much_food;
+        this.created_timestamp = created_timestamp;
     }
 };
 
