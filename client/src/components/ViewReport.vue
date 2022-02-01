@@ -1,40 +1,40 @@
 <template>
   <v-layout column>
-      <v-flex xs6 offset-xs3>
+      <v-flex xs10 offset-xs1>
         <div class="white elevation-2">
           <v-toolbar flat dense class="blue" dark>
-            <v-toolbar-title>Ducks Reports</v-toolbar-title>
+            <v-toolbar-title>Report View</v-toolbar-title>
           </v-toolbar>
           <v-simple-table>
-            <template v-slot:default>
+            <template fluid v-slot:default>
               <thead>
                 <tr>
-                  <th class="text-left">
+                  <th class="align-end">
                     Created By
                   </th>
-                  <th class="text-left">
+                  <th class="align-end">
                     Created Date
                   </th>
-                  <th class="text-left">
-                    Duck Time
+                  <th class="align-end">
+                    What time the ducks where fed?
                   </th>
-                  <th class="text-left">
-                    Duck Food
+                  <th class="align-end">
+                    What food the ducks where fed?
                   </th>
-                  <th class="text-left">
-                    Duck where
+                  <th class="align-end">
+                    Where the ducks where fed?
                   </th>
-                  <th class="text-left">
-                    Duck How many
+                  <th class="align-end">
+                    How mant ducks where fed?
                   </th>
-                  <th class="text-left">
-                    Duck hom much
+                  <th class="align-end">
+                    How much food the ducks ate?
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>{{item.report_owner_name}}</td>
+                  <td class ="align-end">{{item.report_owner_name}}</td>
                   <td>{{item.created_timestamp}}</td>
                   <td>{{item.ducks_time}}</td>
                   <td>{{item.ducks_food}}</td>

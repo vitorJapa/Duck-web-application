@@ -48,6 +48,7 @@
 
             <v-text-field
               v-model="ducks_how_much_food"
+              :rules="duckRules"
               label="How much food they eat?"
               required
             ></v-text-field>

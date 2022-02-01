@@ -17,7 +17,7 @@ const addReport = async (req, res, next) => {
             return;
       }
         const req_data = req.body;
-        const data_teste = {'created_timestamp': d.getTime()};
+        const data_teste = {'created_timestamp': Location.getTime()};
         const merge = {...req.body, ...data_teste}
         await firestore.collection('Ducks').doc().set(merge)
         res.status(200).send({"MSG": 'Report Created'});
@@ -45,7 +45,7 @@ const getAllReport = async (req, res, next) => {
                     doc.data().ducks_where,
                     doc.data().ducks_how_many,
                     doc.data().ducks_how_much_food,
-                    doc.data().created_timestamp = new Date(doc.data().created_timestamp)
+                    doc.data().created_timestamp = new Date(doc.data().created_timestamp).toLocaleDateString([], {hour: '2-digit', minute:'2-digit'})
                 );
                 //todo add a sort function by date
                 allItemArray.push(ducks);
@@ -65,7 +65,7 @@ const getReport = async (req, res, next) => {
         if(!data.exists) {
             res.status(404).send({'Error': 'Report with the given ID not found'});
         }else {
-            const data_date = new Date(data.data().created_timestamp)
+            var date = new Date(data.data().created_timestamp).toLocaleDateString([], {hour: '2-digit', minute:'2-digit'});
             const duck = {
                 "id": data.id,
                 "report_owner_name": data.data().report_owner_name,
@@ -74,7 +74,7 @@ const getReport = async (req, res, next) => {
                 "ducks_where": data.data().ducks_where,
                 "ducks_how_many": data.data().ducks_how_many,
                 "ducks_how_much_food": data.data().ducks_how_much_food,
-                "created_timestamp": data_date 
+                "created_timestamp": date 
             }
             res.send(duck);
         }

@@ -23,7 +23,7 @@
                 :key="item.id">
                 <td>{{item.report_owner_name}}</td>
                 <td>{{item.created_timestamp}}</td>
-                <v-btn dark class="cyan" @click="navigateTo({name: 'report', params:{id: item.id}})">
+                <v-btn dark small class="cyan" @click="navigateTo({name: 'report', params:{id: item.id}})">
                   View
                 </v-btn>
               </tr>
