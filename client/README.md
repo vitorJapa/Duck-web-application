@@ -1,30 +1,10 @@
 # client
+# Project created using Vue and Vuetify
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+#this is the front end part of the Duck Project
+#the project contains 4 webpages
+#the header toolbar will appear in every single page
+# #/ it's the home page, only contains a wellcome card
+# /create_report it's the page where you can create a new report an send it to the database
+# /reports will get all the reports ever created in the database and sort by the date created
+# /report/:id will get all the informations about this report
