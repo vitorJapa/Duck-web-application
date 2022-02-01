@@ -47,6 +47,7 @@ const getAllReport = async (req, res, next) => {
                     doc.data().ducks_how_much_food,
                     doc.data().created_timestamp = new Date(doc.data().created_timestamp)
                 );
+                //todo add a sort function by date
                 allItemArray.push(ducks);
             });
             res.send(allItemArray);

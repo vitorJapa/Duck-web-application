@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Register from '@/components/Register'
 import Reports from '@/components/Reports'
 import Home from '@/components/Home'
 import CreateReport from '@/components/Create_report'
@@ -14,11 +13,6 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: Register
     },
     {
       path: '/reports',
