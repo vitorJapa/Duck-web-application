@@ -8,14 +8,14 @@
 # bash in the root folder
 
 # Client (Frontend) - Terminal A
-cd client
-npm install
-npm start dev
+#cd client
+#npm install
+#npm start dev
 # client will run at localhost:8080
 
 # Server (Backend)- Terminal B
-cd server
-npm install
-npm start
+#cd server
+#npm install
+#npm start
 
 # serve will run at localhost:5000
