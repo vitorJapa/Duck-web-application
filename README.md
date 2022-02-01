@@ -1,14 +1,21 @@
-# client
+# Project to FreshWorks
 
 > A Duck report Project created in Vue.js
+# the project is in the git hub url "https://github.com/vitorJapa/Duck-web-application"
 
 ## Build Setup
 
-``` bash
-# install dependencies
+# bash in the root folder
+
+# Client (Frontend) - Terminal A
+cd client
 npm install
+npm start dev
+# client will run at localhost:8080
 
-# serve with hot reload at localhost:8080
-npm run dev
+# Server (Backend)- Terminal B
+cd server
+npm install
+npm start
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# serve will run at localhost:5000
