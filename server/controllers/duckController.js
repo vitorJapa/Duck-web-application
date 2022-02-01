@@ -17,7 +17,7 @@ const addReport = async (req, res, next) => {
             return;
       }
         const req_data = req.body;
-        const data_teste = {'created_timestamp': Location.getTime()};
+        const data_teste = {'created_timestamp': d.getTime()};
         const merge = {...req.body, ...data_teste}
         await firestore.collection('Ducks').doc().set(merge)
         res.status(200).send({"MSG": 'Report Created'});
@@ -50,6 +50,7 @@ const getAllReport = async (req, res, next) => {
                 //todo add a sort function by date
                 allItemArray.push(ducks);
             });
+            allItemArray.sort(sortByProperty("created_timestamp"));
             res.send(allItemArray);
         }
     } catch (error) {
@@ -97,6 +98,17 @@ const validate = (method) => {
     }
   }
 }
+
+function sortByProperty(property){  
+    return function(a,b){  
+       if(a[property] > b[property])  
+          return 1;  
+       else if(a[property] < b[property])  
+          return -1;  
+   
+       return 0;  
+    }  
+ }
 
 module.exports = {
     addReport,
