@@ -4,8 +4,7 @@ const { json } = require('body-parser');
 const firebase = require('../db');
 const Ducks = require('../models/ducks');
 const firestore = firebase.firestore();
-const { body } = require('express-validator/check')
-const { validationResult } = require('express-validator/check');
+const { body, validationResult } = require('express-validator');
 
 
 const addReport = async (req, res, next) => {
@@ -84,21 +83,6 @@ const getReport = async (req, res, next) => {
     }
 }
 
-const validate = (method) => {
-  switch (method) {
-    case 'new_Report': {
-     return [ 
-        body('report_owner_name', 'Owner name is a required field').exists(),
-        body('ducks_time').optional(),
-        body('ducks_food').optional(),
-        body('ducks_where').optional(),
-        body('ducks_how_many').optional(),
-        body('ducks_how_much_food').optional()
-       ]   
-    }
-  }
-}
-
 function sortByProperty(property){  
     return function(a,b){  
        if(a[property] > b[property])  
@@ -113,6 +97,4 @@ function sortByProperty(property){
 module.exports = {
     addReport,
     getAllReport,
-    getReport,
-    validate
-}
+    getReport}
